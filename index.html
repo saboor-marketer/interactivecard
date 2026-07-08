@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Card Details Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card-preview">
+            <div class="card">
+                <div class="card-front">
+                    <div class="card-chip"></div>
+                    <div class="card-logo">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="22" stroke="#fff" stroke-width="2"/>
+                            <circle cx="24" cy="24" r="10" fill="#fff"/>
+                        </svg>
+                    </div>
+                    <div class="card-number" id="cardNumberDisplay">0000 0000 0000 0000</div>
+                    <div class="card-details">
+                        <div class="card-holder">
+                            <span class="label">Card Holder</span>
+                            <span class="value" id="cardHolderDisplay">YOUR NAME</span>
+                        </div>
+                        <div class="card-expiry">
+                            <span class="label">Expires</span>
+                            <span class="value" id="cardExpiryDisplay">MM/YY</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-back">
+                    <div class="magnetic-strip"></div>
+                    <div class="cvv-strip">
+                        <span class="cvv-label">CVC</span>
+                        <div class="cvv-box" id="cvvDisplay">•••</div>
+                    </div>
+                    <div class="card-back-text">This card is property of the issuing bank. Misuse is criminal offense.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <form id="cardForm" novalidate>
+                <div class="form-group">
+                    <label for="cardHolder">Cardholder Name</label>
+                    <input 
+                        type="text" 
+                        id="cardHolder" 
+                        placeholder="e.g. Jane Appleseed"
+                        maxlength="30"
+                    >
+                    <span class="error-message" id="cardHolderError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input 
+                        type="text" 
+                        id="cardNumber" 
+                        placeholder="e.g. 1234 5678 9123 0000"
+                        maxlength="19"
+                    >
+                    <span class="error-message" id="cardNumberError"></span>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="expiryMonth">Expiry Month</label>
+                        <select id="expiryMonth">
+                            <option value="">Month</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                        <span class="error-message" id="expiryMonthError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="expiryYear">Expiry Year</label>
+                        <select id="expiryYear">
+                            <option value="">Year</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                            <option value="32">32</option>
+                            <option value="33">33</option>
+                            <option value="34">34</option>
+                        </select>
+                        <span class="error-message" id="expiryYearError"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="cvc">CVC</label>
+                    <input 
+                        type="text" 
+                        id="cvc" 
+                        placeholder="e.g. 123"
+                        maxlength="4"
+                    >
+                    <span class="error-message" id="cvcError"></span>
+                </div>
+
+                <button type="submit" class="submit-btn">Confirm</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
